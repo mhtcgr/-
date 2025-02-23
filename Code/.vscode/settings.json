@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "stdio.h": "c",
+        "syntax.tab.h": "c",
+        "translator.h": "c"
+    }
+}

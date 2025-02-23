@@ -1,0 +1,189 @@
+FUNCTION initW : 
+PARAM array_w 
+addr0 := array_w 
+addr1 := addr0 + #0 
+*addr1 := #0 
+addr2 := array_w 
+addr3 := addr2 + #4 
+*addr3 := #1 
+addr4 := array_w 
+addr5 := addr4 + #8 
+*addr5 := #2 
+addr6 := array_w 
+addr7 := addr6 + #12 
+*addr7 := #5 
+addr8 := array_w 
+addr9 := addr8 + #16 
+*addr9 := #6 
+addr10 := array_w 
+addr11 := addr10 + #20 
+*addr11 := #7 
+RETURN #0 
+FUNCTION initV : 
+PARAM array_v 
+addr12 := array_v 
+addr13 := addr12 + #0 
+*addr13 := #0 
+addr14 := array_v 
+addr15 := addr14 + #4 
+*addr15 := #1 
+addr16 := array_v 
+addr17 := addr16 + #8 
+*addr17 := #6 
+addr18 := array_v 
+addr19 := addr18 + #12 
+*addr19 := #18 
+addr20 := array_v 
+addr21 := addr20 + #16 
+*addr21 := #22 
+addr22 := array_v 
+addr23 := addr22 + #20 
+*addr23 := #28 
+RETURN #0 
+FUNCTION main : 
+DEC array_weight 24 
+DEC array_value 24 
+DEC array_results 288 
+addr24 := &array_weight 
+ARG addr24 
+t74 := CALL initW 
+addr25 := &array_value 
+ARG addr25 
+t76 := CALL initV 
+var_r_i := #0 
+LABEL label0 : 
+IF var_r_i < #6 GOTO label1 
+GOTO label2 
+LABEL label1 : 
+var_r_j := #0 
+LABEL label3 : 
+IF var_r_j < #12 GOTO label4 
+GOTO label5 
+LABEL label4 : 
+t94 := var_r_i * #48 
+addr27 := &array_results 
+addr26 := addr27 + t94 
+t96 := var_r_j * #4 
+addr28 := addr26 + t96 
+*addr28 := #0 
+t99 := var_r_j + #1 
+var_r_j := t99 
+GOTO label3 
+LABEL label5 : 
+t104 := var_r_i + #1 
+var_r_i := t104 
+GOTO label0 
+LABEL label2 : 
+var_ki := #1 
+LABEL label6 : 
+IF var_ki < #6 GOTO label7 
+GOTO label8 
+LABEL label7 : 
+var_kj := #1 
+LABEL label9 : 
+IF var_kj < #12 GOTO label10 
+GOTO label11 
+LABEL label10 : 
+t121 := var_ki * #4 
+addr30 := &array_weight 
+addr29 := addr30 + t121 
+t122 := *addr29 
+IF var_kj < t122 GOTO label12 
+GOTO label13 
+LABEL label12 : 
+t129 := var_ki * #48 
+addr32 := &array_results 
+addr31 := addr32 + t129 
+t131 := var_kj * #4 
+addr33 := addr31 + t131 
+t134 := var_ki - #1 
+t137 := t134 * #48 
+addr35 := &array_results 
+addr34 := addr35 + t137 
+t139 := var_kj * #4 
+addr36 := addr34 + t139 
+t140 := *addr36 
+*addr33 := t140 
+GOTO label14 
+LABEL label13 : 
+t144 := var_ki - #1 
+t147 := t144 * #48 
+addr40 := &array_results 
+addr39 := addr40 + t147 
+t149 := var_kj * #4 
+addr41 := addr39 + t149 
+t150 := *addr41 
+t155 := var_ki * #4 
+addr43 := &array_value 
+addr42 := addr43 + t155 
+t156 := *addr42 
+t160 := var_ki - #1 
+t163 := t160 * #48 
+addr45 := &array_results 
+addr44 := addr45 + t163 
+t169 := var_ki * #4 
+addr47 := &array_weight 
+addr46 := addr47 + t169 
+t170 := *addr46 
+t164 := var_kj - t170 
+t171 := t164 * #4 
+addr48 := addr44 + t171 
+t172 := *addr48 
+t151 := t156 + t172 
+IF t150 > t151 GOTO label15 
+GOTO label16 
+LABEL label15 : 
+t179 := var_ki * #48 
+addr50 := &array_results 
+addr49 := addr50 + t179 
+t181 := var_kj * #4 
+addr51 := addr49 + t181 
+t184 := var_ki - #1 
+t187 := t184 * #48 
+addr53 := &array_results 
+addr52 := addr53 + t187 
+t189 := var_kj * #4 
+addr54 := addr52 + t189 
+t190 := *addr54 
+*addr51 := t190 
+GOTO label17 
+LABEL label16 : 
+t197 := var_ki * #48 
+addr58 := &array_results 
+addr57 := addr58 + t197 
+t199 := var_kj * #4 
+addr59 := addr57 + t199 
+t203 := var_ki * #4 
+addr61 := &array_value 
+addr60 := addr61 + t203 
+t204 := *addr60 
+t208 := var_ki - #1 
+t211 := t208 * #48 
+addr63 := &array_results 
+addr62 := addr63 + t211 
+t217 := var_ki * #4 
+addr65 := &array_weight 
+addr64 := addr65 + t217 
+t218 := *addr64 
+t212 := var_kj - t218 
+t219 := t212 * #4 
+addr66 := addr62 + t219 
+t220 := *addr66 
+t193 := t204 + t220 
+*addr59 := t193 
+LABEL label17 : 
+LABEL label14 : 
+t223 := var_kj + #1 
+var_kj := t223 
+GOTO label9 
+LABEL label11 : 
+t228 := var_ki + #1 
+var_ki := t228 
+GOTO label6 
+LABEL label8 : 
+addr68 := &array_results 
+addr67 := addr68 + #240 
+addr69 := addr67 + #44 
+t239 := *addr69 
+WRITE t239 
+RETURN #0 

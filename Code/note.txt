@@ -1,0 +1,177 @@
+Program (1)
+  ExtDefList (1)
+    ExtDef (1)
+      Specifier (1)
+        StructSpecifier (1)
+          STRUCT
+          OptTag (1)
+            ID: Person
+          LC
+          DefList (2)
+            Def (2)
+              Specifier (2)
+                TYPE: float
+              DecList (2)
+                Dec (2)
+                  VarDec (2)
+                    ID: height
+              SEMI
+            DefList (3)
+              Def (3)
+                Specifier (3)
+                  TYPE: float
+                DecList (3)
+                  Dec (3)
+                    VarDec (3)
+                      ID: weight
+                SEMI
+              DefList (4)
+                Def (4)
+                  Specifier (4)
+                    TYPE: int
+                  DecList (4)
+                    Dec (4)
+                      VarDec (4)
+                        ID: id
+                  SEMI
+          RC
+      SEMI
+jxw@jxw-virtual-machine:~/Downloads/Code(3)/Code$ ./parser test.cmm
+Program (2)
+  ExtDefList (2)
+    ExtDef (2)
+      Specifier (2)
+        TYPE: int
+      FunDec (2)
+        ID: main
+        LP
+        RP
+      CompSt (2)
+        LC
+        DefList (3)
+          Def (3)
+            Specifier (3)
+              StructSpecifier (3)
+                STRUCT
+                Tag (3)
+                  ID: Person
+            DecList (3)
+              Dec (3)
+                VarDec (3)
+                  ID: person
+            SEMI
+          DefList (4)
+            Def (4)
+              Specifier (4)
+                TYPE: int
+              DecList (4)
+                Dec (4)
+                  VarDec (4)
+                    ID: a
+                COMMA
+                DecList (4)
+                  Dec (4)
+                    VarDec (4)
+                      ID: b
+                  COMMA
+                  DecList (4)
+                    Dec (4)
+                      VarDec (4)
+                        ID: c
+                    COMMA
+                    DecList (4)
+                      Dec (4)
+                        VarDec (4)
+                          ID: d
+              SEMI
+            DefList (5)
+              Def (5)
+                Specifier (5)
+                  TYPE: float
+                DecList (5)
+                  Dec (5)
+                    VarDec (5)
+                      ID: e
+                  COMMA
+                  DecList (5)
+                    Dec (5)
+                      VarDec (5)
+                        ID: f
+                    COMMA
+                    DecList (5)
+                      Dec (5)
+                        VarDec (5)
+                          ID: g
+                      COMMA
+                      DecList (5)
+                        Dec (5)
+                          VarDec (5)
+                            ID: h
+                SEMI
+              DefList (6)
+                Def (6)
+                  Specifier (6)
+                    TYPE: float
+                  DecList (6)
+                    Dec (6)
+                      VarDec (6)
+                        ID: hei
+                      ASSIGNOP
+                      Exp (6)
+                        FLOAT: 170.000000
+                  SEMI
+                DefList (7)
+                  Def (7)
+                    Specifier (7)
+                      TYPE: float
+                    DecList (7)
+                      Dec (7)
+                        VarDec (7)
+                          ID: wei
+                        ASSIGNOP
+                        Exp (7)
+                          FLOAT: 75.000000
+                    SEMI
+        StmtList (8)
+          Stmt (8)
+            Exp (8)
+              Exp (8)
+                Exp (8)
+                  ID: person
+                DOT
+                ID: height
+              ASSIGNOP
+              Exp (8)
+                ID: hei
+            SEMI
+          StmtList (9)
+            Stmt (9)
+              Exp (9)
+                Exp (9)
+                  Exp (9)
+                    ID: person
+                  DOT
+                  ID: weight
+                ASSIGNOP
+                Exp (9)
+                  ID: wei
+              SEMI
+            StmtList (10)
+              Stmt (10)
+                Exp (10)
+                  Exp (10)
+                    Exp (10)
+                      ID: person
+                    DOT
+                    ID: id
+                  ASSIGNOP
+                  Exp (10)
+                    ID: p
+                SEMI
+              StmtList (11)
+                Stmt (11)
+                  RETURN
+                  Exp (11)
+                    INT: 0
+                  SEMI
+        RC
